@@ -1585,9 +1585,26 @@ Search                         LOGO                    Login Subscribe
 
 .gh-more a {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 4px;
+
+    margin: auto;
+    padding: 1rem 2.5rem;
+
+    width: fit-content;
+
+    font-weight: 500;
+
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+
+    transition: border 0.3s ease-in;
 }
+    .gh-more a:hover,
+    .gh-more a:focus {
+        border-color: var(--color-darker-gray);
+    }
 
 .gh-more svg {
     margin-top: -1px;
