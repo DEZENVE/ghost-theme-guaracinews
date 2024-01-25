@@ -479,7 +479,7 @@ button.gh-form-input {
 }
 
 .gh-navigation-logo img {
-    max-height: 40px;
+    max-height: 28px;
 }
 
 .gh-navigation-menu {
@@ -1422,44 +1422,7 @@ Search                         LOGO                    Login Subscribe
 /* 9. CTA
 /* ---------------------------------------------------------- */
 
-.gh-cta {
-    display: none;
-    margin-top: max(4vw, 40px);
-}
 
-.gh-header:is(.is-highlight, .is-magazine) + .gh-cta {
-    display: block;
-}
-
-.gh-cta-inner {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
-    padding: clamp(48px, 3.64vw + 33.45px, 80px) clamp(40px, 2.73vw + 29.09px, 64px);
-    text-align: center;
-    background-color: var(--color-lighter-gray);
-}
-
-.gh-cta-content {
-    max-width: 640px;
-}
-
-.gh-cta-title {
-    font-size: clamp(2.8rem,1.36vw + 2.25rem,4rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.021em;
-}
-
-.gh-cta-description {
-    margin-top: 12px;
-    font-size: 1.8rem;
-    line-height: 1.4;
-    letter-spacing: -0.015em;
-}
 
 /* 10. Featured posts
 /* ---------------------------------------------------------- */
@@ -2703,7 +2666,7 @@ figcaption a {
 /* ---------------------------------------------------------- */
 
 .gh-footer {
-    margin-top: 12vw;
+    margin-top: 8rem;
     font-size: 1.5rem;
     color: var(--color-darker-gray);
 }
@@ -2731,13 +2694,13 @@ figcaption a {
 
 .gh-footer-bar {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
     column-gap: 32px;
     margin-bottom: 100px;
     padding-block: 28px;
     font-weight: 550;
-    border-block: 1px solid var(--color-border);
+    border-top: 1px solid var(--color-border);
 }
 
 .gh-footer-logo {
@@ -2749,22 +2712,59 @@ figcaption a {
 }
 
 .gh-footer-logo img {
-    max-height: 40px;
+    margin-bottom: 1.5rem;
+
+    max-height: 24px;
+}
+
+.gh-footer-logo .description {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.gh-footer-menu {
+    margin: 4rem 0 0;
+
+    font-weight: 400;
 }
 
 .gh-footer-menu .nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 8px 28px;
-    flex-wrap: wrap;
-    margin: 0;
     padding: 0;
     list-style-type: none;
+    font-weight: 400;
 }
 
-.gh-footer-copyright {
-    text-align: right;
-    white-space: nowrap;
+.gh-footer-menu.ghost a {
+    display: inline-flex;
+    align-items: center;
+
+    font-weight: 700;
+}
+
+.gh-footer-menu.ghost img,
+.gh-footer-menu.ghost svg {
+    display: inline;
+    margin-left: 0.5rem;
+
+    height: 20px;
+}
+
+.gh-footer-copyright-container {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 2rem 0;
+
+    border-top: 1px solid var(--color-border);
+}
+
+.gh-footer-copyright-container .copyright {
+    text-transform: uppercase;
+    font-size: 1.25rem;
 }
 
 .gh-footer-copyright a {
@@ -2799,14 +2799,6 @@ figcaption a {
 
 .gh-footer-signup .gh-form {
     margin-top: 40px;
-}
-
-@media (max-width: 991px) {
-    .gh-footer-bar {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
 }
 
 /* 22. Lightbox

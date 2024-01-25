@@ -1,0 +1,33 @@
+.gn-container {
+  margin-top: 64px;
+}
+
+.gn-apoio .logos-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.gn-apoio .logo {
+  border: 1px solid var(--color-border);
+  border-radius: 0.25rem;
+}
+
+@media ( max-width: 1120px ) {
+  .gn-apoio .logos-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media ( max-width: 820px ) {
+  .gn-apoio .logos-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media ( max-width: 560px ) {
+  .gn-apoio .logos-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}

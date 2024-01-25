@@ -39,7 +39,7 @@
         "url": "https://github.com/TryGhost/Source.git"
     },
     "bugs": "https://github.com/TryGhost/Source/issues",
-    "contributors": "https://github.com/TryGhost/Source/graphs/contributors",
+    "contributors": ["https://github.com/TryGhost/Source/graphs/contributors"],
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
         "autoprefixer": "10.4.7",
@@ -53,7 +53,7 @@
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
         "inquirer": "8.2.4",
-        "postcss": "8.2.13",
+        "postcss": "8.4.23",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.0"
     },
@@ -121,14 +121,6 @@
                     "Elegant serif"
                 ],
                 "default": "Modern sans-serif"
-            },
-            "signup_heading": {
-                "type": "text",
-                "description": "Used in your footer across your theme, defaults to site title when empty"
-            },
-            "signup_subheading": {
-                "type": "text",
-                "description": "Defaults to site description when empty"
             },
             "header_style": {
                 "type": "select",
