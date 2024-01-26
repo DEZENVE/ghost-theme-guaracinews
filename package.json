@@ -129,6 +129,7 @@
                     "Highlight",
                     "Magazine",
                     "Search",
+                    "DEZENVE",
                     "Off"
                 ],
                 "description": "Landing is recommended for all sites, Highlight & Magazine for those with more content",
@@ -152,7 +153,7 @@
                 "type": "boolean",
                 "default": false,
                 "group": "homepage",
-                "visibility": "header_style:[Highlight, Magazine]"
+                "visibility": "header_style:[Highlight, Magazine, DEZENVE]"
             },
             "post_feed_style": {
                 "type": "select",

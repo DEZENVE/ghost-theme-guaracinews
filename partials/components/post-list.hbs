@@ -46,6 +46,25 @@
                                 {{/foreach}}
                             {{/get}}
                         {{/match}}
+                    {{else match @custom.header_style "DEZENVE"}}
+                        {{#if @custom.show_featured_posts}}
+                            {{#match posts.length ">=" 4}}
+                                {{#get "posts" include="authors" limit="16"}}
+                                    {{#foreach posts from="5" limit="12"}}
+                                        {{> "post-card" lazyLoad=true}}
+                                    {{/foreach}}
+                                {{/get}}
+                            {{/match}}
+                        {{else}}
+                            {{#match posts.length ">=" 10}}
+                                {{#get "posts" include="authors" limit="22"}}
+                                    {{#foreach posts from="11" limit="12"}}
+                                        {{> "post-card" lazyLoad=true}}
+                                    {{/foreach}}
+                                {{/get}}
+                            {{/match}}
+                        {{/if}}
+                        
                     {{else}}
                         {{#get "posts" include="authors" limit="12"}}
                             {{#foreach posts}}

@@ -4,6 +4,8 @@
         {{> "components/header-content"}}
     {{else match headerStyle "Magazine"}}
         {{> "components/header-content"}}
+    {{else match headerStyle "DEZENVE"}}
+        {{> "components/header-content"}}
     {{else}}
         {{#match headerStyle "Landing"}}
             {{#if @site.members_enabled}}

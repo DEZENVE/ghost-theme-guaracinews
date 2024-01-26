@@ -1365,6 +1365,218 @@ Search                         LOGO                    Login Subscribe
     }
 }
 
+/* 8.2. DEZENVE layout */
+
+.gh-header.is-dezenve .gh-header-inner {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: var(--grid-gap);
+}
+
+.gh-header.is-dezenve .gh-header-left {
+    position: relative;
+    grid-column: span 8;
+}
+
+.gh-header.is-dezenve .gh-header-left .gh-card {
+    height: 100%;
+}
+
+.gh-header.is-dezenve .gh-header-left .gh-card .gh-card-link {
+    display: grid;
+    align-items: flex-end;
+
+    height: 100%;
+}
+
+.gh-header.is-dezenve .gh-header-left .gh-card .gh-layer-gradient {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+}
+
+.gh-header.is-dezenve .gh-header-left .gh-card .gh-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transition: filter 0.3s ease-in;
+}
+    .gh-header.is-dezenve .gh-header-left .gh-card .gh-card-link:hover .gh-card-image,
+    .gh-header.is-dezenve .gh-header-left .gh-card .gh-card-link:focus .gh-card-image {
+        filter: brightness(0.7);
+    }
+
+.gh-header.is-dezenve .gh-header-left .gh-card .gh-card-wrapper {
+    position: relative;
+    z-index: 1;
+
+    padding: 2rem;
+}
+
+.gh-header.is-dezenve .gh-header-left .gh-card .gh-card-tag {
+    display: block;
+    margin-bottom: 12px;
+
+    color: var(--color-light-gray);
+}
+
+.gh-header.is-dezenve .gh-header-left .gh-card .gh-card-title {
+    font-size: clamp(2.8rem, 1.36vw + 2.25rem, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+
+    color: var(--color-white);
+}
+
+.gh-header.is-dezenve .gh-header-left .gh-card .gh-card-excerpt {
+    margin-top: clamp(12px, 0.45vw + 10.18px, 16px);
+    font-size: 1.8rem;
+
+    color: var(--color-light-gray);
+}
+
+.gh-header.is-dezenve .gh-header-left .gh-card .gh-card-meta:not(:empty) {
+    margin-top: 14px;
+
+    color: var(--color-light-gray);
+}
+
+.gh-header.is-dezenve .gh-header-middle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap);
+    grid-column: 9 / span 4;
+}
+
+.gh-header.is-dezenve .gh-header-middle .gh-card:last-child .gh-card-image {
+    display: none;
+}
+
+.gh-header.is-dezenve .gh-header-middle .gh-card .gh-card-excerpt {
+    display: none;
+}
+
+.gh-header.is-dezenve .gh-header-right {
+    grid-column: 13 / -1;
+}
+
+.gh-header.is-dezenve .gh-featured {
+    margin-top: 0;
+    padding: 0;
+}
+
+.gh-header.is-dezenve .gh-featured-feed {
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-header.is-dezenve .gh-featured-feed .gh-card-title {
+    font-size: clamp(1.4rem, 0.23vw + 1.31rem, 1.6rem);
+}
+
+.gh-header.is-dezenve .gh-header-left::after,
+.gh-header.is-dezenve .gh-header-middle::after {
+    position: absolute;
+    top: 0;
+    right: calc(var(--grid-gap) / -2);
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-border);
+}
+
+.gh-header.is-dezenve .gh-card::before {
+    position: absolute;
+    top: calc(var(--grid-gap) / -2);
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+.gh-header.is-dezenve .gh-featured .gh-card:first-child::before {
+    display: none;
+}
+
+@media (max-width: 1199px) {
+    .gh-header.is-dezenve .gh-header-inner {
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    .gh-header.is-dezenve .gh-header-left {
+        grid-column: span 6;
+    }
+
+    .gh-header.is-dezenve .gh-header-middle {
+        grid-column: 7 / -1;
+    }
+
+    .gh-header.is-dezenve .gh-header-right {
+        grid-column: 1 / -1;
+    }
+
+    .gh-header.is-dezenve .gh-featured-feed {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gh-header.is-dezenve .gh-featured-feed .gh-card:before {
+        width: calc(100% + var(--grid-gap));
+    }
+
+    .gh-header.is-dezenve .gh-featured-feed .gh-card::after {
+        position: absolute;
+        top: 0;
+        left: calc(var(--grid-gap) / -2);
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: var(--color-border);
+    }
+}
+
+@media (max-width: 991px) {
+    .gh-header.is-dezenve .gh-header-middle .gh-card:nth-child(2) .gh-card-image {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .gh-header.is-dezenve .gh-header-inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gh-header.is-dezenve .gh-header-left .gh-card .gh-card-link {
+        padding-top: 20rem;
+    }
+
+    .gh-header.is-dezenve .gh-featured-feed {
+        display: flex;
+        /* gap: var(--grid-gap); */
+    }
+
+    .gh-header.is-dezenve .gh-card-image {
+        display: block !important;
+    }
+
+    .gh-header.is-dezenve .gh-header-middle .gh-card .gh-card-excerpt {
+        display: -webkit-box;
+    }
+}
+
 /* 8.3. Classic layout */
 
 .gh-header.is-classic {
@@ -1647,7 +1859,7 @@ Search                         LOGO                    Login Subscribe
     grid-column: 4 / span 10;
 }
 
-.gh-header:is(.is-highlight, .is-magazine) ~ .gh-container.is-grid:not(.has-sidebar) :is(.gh-container-title, .gh-main, .gh-more) {
+.gh-header:is(.is-highlight, .is-magazine, .is-dezenve) ~ .gh-container.is-grid:not(.has-sidebar) :is(.gh-container-title, .gh-main, .gh-more) {
     grid-column: 1 / -1;
 }
 
@@ -2608,7 +2820,8 @@ figcaption a {
     letter-spacing: 0;
 }
 
-.has-serif-title .gh-header.is-highlight .gh-featured-feed .gh-card-title {
+.has-serif-title .gh-header.is-highlight .gh-featured-feed .gh-card-title,
+.has-serif-title .gh-header.is-dezenve .gh-featured-feed .gh-card-title {
     font-size: clamp(1.6rem, 0.23vw + 1.51rem, 1.8rem);
 }
 
@@ -2640,13 +2853,15 @@ figcaption a {
 }
 
 .has-serif-body .gh-header.is-magazine .gh-header-inner > .gh-card .gh-card-excerpt,
-.has-serif-body .gh-header.is-highlight .gh-card:first-child .gh-card-excerpt {
+.has-serif-body .gh-header.is-highlight .gh-card:first-child .gh-card-excerpt,
+.has-serif-body .gh-header.is-dezenve .gh-card:first-child .gh-card-excerpt {
     font-size: 1.8rem;
     letter-spacing: -0.001em;
 }
 
 .has-serif-title .gh-header.is-magazine .gh-header-inner>.gh-card .gh-card-title,
-.has-serif-title .gh-header.is-highlight .gh-header-left .gh-card-title {
+.has-serif-title .gh-header.is-highlight .gh-header-left .gh-card-title,
+.has-serif-title .gh-header.is-dezenve .gh-header-left .gh-card-title {
     font-weight: 550;
     font-size: clamp(3.2rem,1.82vw + 2.47rem,4.9rem)
 }
