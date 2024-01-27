@@ -1,0 +1,73 @@
+#page-contato {
+  margin-top: 6rem;
+}
+
+/*#page-contato .hero-section {
+  display: flex;
+  align-items: center;
+}*/
+
+#page-contato .gh-article-title {
+  margin-bottom: 1rem;
+}
+
+#page-contato .page-excerpt {
+  max-width: 60rem;
+}
+
+#page-contato .page-featureimage {
+  margin-top: 2.5rem;
+
+  max-width: 20rem;
+  height: 100%;
+  object-fit: cover;
+}
+
+#page-contato .container-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+
+  margin-top: 6rem;
+}
+
+#page-contato .card {
+  padding: 2.5rem;
+
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+#page-contato .card .title {
+  margin-bottom: 1rem;
+}
+
+#page-contato .card .description {
+  margin-bottom: 2.5rem;
+}
+
+#page-contato .card .link {
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+
+  font-weight: 700;
+  color: var(--ghost-accent-color);
+}
+
+#page-contato .card .link .ti {
+  font-size: 2.5rem;
+}
+  #page-contato .card .link .ti:first-child {
+    margin-right: 1rem;
+  }
+  #page-contato .card .link .ti:last-child {
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in;
+  }
+    #page-contato .card .link:hover .ti:last-child,
+    #page-contato .card .link:focus .ti:last-child {
+      opacity: 1;
+    }

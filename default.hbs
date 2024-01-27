@@ -8,11 +8,17 @@
 		
 		{{!-- Preload main styles and scripts for better performance --}}
 		<link rel="preload" as="style" href="{{asset "built/screen.css"}}">
+		<link rel="preload" as="style" href="{{asset "built/page-home-apoiadores.css"}}">
+		<link rel="preload" as="style" href="{{asset "built/page-contato.css"}}">
+		<link rel="preload" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 		<link rel="preload" as="script" href="{{asset "built/source.js"}}">
 
 		{{!-- Theme assets - use the {{asset}} helper to reference styles & scripts, this will take care of caching and cache-busting automatically --}}
 		<link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}">
-		<link rel="stylesheet" type="text/css" href="{{asset "built/personal.css"}}">
+		<link rel="stylesheet" type="text/css" href="{{asset "built/page-home-apoiadores.css"}}">
+		<link rel="stylesheet" type="text/css" href="{{asset "built/page-contato.css"}}">
+		<!-- Tabler icons -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 
 		{{!-- Custom background color --}}
 		<style>

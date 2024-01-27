@@ -1,0 +1,45 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file into the body of the default.hbs template --}}
+
+{{#post}}
+
+	<main id="page-contato" class="gh-main gh-outer">
+		<div class="gh-inner">
+			<div class="hero-section">
+				<div>
+					<h1 class="gh-article-title is-title">{{ title }}</h1>
+					<p class="page-excerpt">{{ excerpt }}</p>
+				</div>
+
+				<!--<img src="{{ img_url feature_image }}" class="page-featureimage" />-->
+			</div>
+
+			<div class="container-cards">
+				<div class="card">
+					<h3 class="title">E-mail</h3>
+
+					<p class="description">Vamos lhe responder o mais breve possível.</p>
+
+					<a href="mailto:contato@guaracinews.com.br" target="_blank" rel="noreferrer" class="link"><i class="ti ti-mail"></i> contato@guaracinews.com.br <i class="ti ti-arrow-up-right"></i></a>
+				</div>
+
+				<div class="card">
+					<h3 class="title">Telefone</h3>
+
+					<p class="description">Faça uma ligação agora mesmo</p>
+
+					<a href="tel:+5543991240574" target="_blank" rel="noreferrer" class="link"><i class="ti ti-phone"></i> (43) 99124-0574 <i class="ti ti-arrow-up-right"></i></a>
+				</div>
+
+				<div class="card">
+					<h3 class="title">WhatsApp</h3>
+
+					<p class="description">Mande uma mensagem</p>
+
+					<a href="https://api.whatsapp.com/send?l=pt_br&phone=5543991240574" target="_blank" rel="noreferrer" class="link"><i class="ti ti-brand-whatsapp"></i> (43) 99124-0574 <i class="ti ti-arrow-up-right"></i></a>
+				</div>
+			</div>
+		</div>
+	</main>
+
+{{/post}}
