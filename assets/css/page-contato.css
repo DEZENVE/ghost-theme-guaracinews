@@ -71,3 +71,23 @@
     #page-contato .card .link:focus .ti:last-child {
       opacity: 1;
     }
+  
+@media ( max-width: 1260px ) {
+  #page-contato .container-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #page-contato .container-cards .card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media ( max-width: 780px ) {
+  #page-contato .container-cards {
+    grid-template-columns: 1fr;
+  }
+
+  #page-contato .container-cards .card:last-child {
+    grid-column: unset;
+  }
+}
