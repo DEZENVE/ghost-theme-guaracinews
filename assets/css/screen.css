@@ -1419,7 +1419,7 @@ Search                         LOGO                    Login Subscribe
     position: relative;
     z-index: 1;
 
-    padding: 2rem;
+    padding: 4rem;
 }
 
 .gh-header.is-dezenve .gh-header-left .gh-card .gh-card-tag {
@@ -1561,6 +1561,10 @@ Search                         LOGO                    Login Subscribe
 
     .gh-header.is-dezenve .gh-header-left .gh-card .gh-card-link {
         padding-top: 20rem;
+    }
+
+    .gh-header.is-dezenve .gh-header-left .gh-card .gh-card-wrapper {
+        padding: 2rem 2rem 4rem;
     }
 
     .gh-header.is-dezenve .gh-featured-feed {
