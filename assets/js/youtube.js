@@ -2,7 +2,7 @@ async function Youtube() {
   const host =
     location.hostname === 'localhost' ?
       'http://localhost:3001'
-    : 'https://guaracinews.com.br'
+    : 'https://api.guaracinews.com.br'
 
   const req = await fetch(`${host}/youtube/events/completed`)
   const res = await req.json()
