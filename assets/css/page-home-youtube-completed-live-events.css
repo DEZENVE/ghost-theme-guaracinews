@@ -1,0 +1,25 @@
+#page-home-youtube-completed-live-events {
+  margin-top: 64px;
+}
+
+#page-home-youtube-completed-live-events .container-youtube-videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+#page-home-youtube-completed-live-events .container-youtube-videos .video {
+  background-color: #cccccc;
+
+  aspect-ratio: 16 / 9;
+}
+
+#page-home-youtube-completed-live-events
+  .container-youtube-videos
+  .video
+  iframe {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+}
