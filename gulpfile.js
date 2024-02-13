@@ -44,6 +44,7 @@ function css(done) {
   pump(
     [
       src('assets/css/screen.css', {sourcemaps: true}),
+      src('assets/css/page-home-banners.css', {sourcemaps: true}),
       src('assets/css/page-home-apoiadores.css', {sourcemaps: true}),
       src('assets/css/page-home-youtube-completed-live-events.css', {
         sourcemaps: true,
