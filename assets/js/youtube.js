@@ -3,6 +3,8 @@ const HOST =
     'http://localhost:3001'
   : 'https://api.guaracinews.com.br'
 
+console.log(HOST)
+
 const TODAY_DATE = new Date()
 
 async function youtubeCompletedEvents() {
@@ -132,5 +134,5 @@ async function youtubeUpcomingEvents() {
   }
 }
 
-//youtubeCompletedEvents()
+youtubeCompletedEvents()
 youtubeUpcomingEvents()
