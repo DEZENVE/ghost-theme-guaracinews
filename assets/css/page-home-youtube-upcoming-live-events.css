@@ -5,6 +5,11 @@
   margin-top: 40px;
 }
 
+#page-home-youtube-upcoming-live-events .tomorrow-events-container,
+#page-home-youtube-upcoming-live-events .today-event-container {
+  display: none;
+}
+
 #page-home-youtube-upcoming-live-events .background-photo {
   position: absolute;
   top: 0;
@@ -87,6 +92,34 @@
 
 #page-home-youtube-upcoming-live-events .date-container .hours {
   font-size: 3rem;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+/* TODAY EVENTS */
+#page-home-youtube-upcoming-live-events .today-event-container .youtube-iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+#page-home-youtube-upcoming-live-events .today-event-container .title {
+  margin-bottom: 2.5rem;
+
+  font-size: 3rem;
+}
+
+#page-home-youtube-upcoming-live-events .today-event-container .description {
+  margin-top: 2.5rem;
+}
+
+#page-home-youtube-upcoming-live-events
+  .today-event-container
+  .date-container
+  .hours {
+  margin-bottom: 2.5rem;
+
+  font-size: 8rem;
+  font-weight: 900;
   line-height: 1;
   color: var(--color-white);
 }

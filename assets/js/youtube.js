@@ -93,12 +93,39 @@ async function youtubeUpcomingEvents() {
 
   const upcomingEvents = await getUpcomingEvents()
 
-  console.log(upcomingEvents)
-
   if (upcomingEvents !== null) {
     const {todayEvents, tomorrowEvents} = getEventsByDay(upcomingEvents)
 
     if (todayEvents.length > 0) {
+      const hours = new Date(
+        todayEvents[0].details.liveStreamingDetails.scheduledStartTime
+      ).getHours()
+      const minutes = new Date(
+        todayEvents[0].details.liveStreamingDetails.scheduledStartTime
+      ).getMinutes()
+
+      const section = document.getElementById(
+        'page-home-youtube-upcoming-live-events'
+      )
+      section.style.display = 'block'
+
+      const todayEventContainer = section.querySelector(
+        '.today-event-container'
+      )
+      todayEventContainer.style.display = 'block'
+
+      const hoursSpan = todayEventContainer.querySelector('.hours')
+      hoursSpan.innerHTML = `${hours}h${minutes}`
+
+      const youtubeIframe = todayEventContainer.querySelector('.youtube-iframe')
+      youtubeIframe.setAttribute(
+        'src',
+        `https://www.youtube.com/embed/${todayEvents[0].event.id.videoId}?si=cYXeueU___L71pjB&autoplay=1&mute=1`
+      )
+
+      const descriptionContainer =
+        todayEventContainer.querySelector('.description')
+      descriptionContainer.innerHTML = todayEvents[0].event.snippet.title
     }
 
     if (tomorrowEvents.length > 0) {
@@ -122,13 +149,18 @@ async function youtubeUpcomingEvents() {
       )
       section.style.display = 'block'
 
-      const daySpan = section.querySelector('.day')
+      const tomorrowEventsContainer = section.querySelector(
+        '.tomorrow-events-container'
+      )
+      tomorrowEventsContainer.style.display = 'block'
+
+      const daySpan = tomorrowEventsContainer.querySelector('.day')
       daySpan.innerHTML = day
 
-      const monthSpan = section.querySelector('.month')
+      const monthSpan = tomorrowEventsContainer.querySelector('.month')
       monthSpan.innerHTML = month
 
-      const hoursSpan = section.querySelector('.hours')
+      const hoursSpan = tomorrowEventsContainer.querySelector('.hours')
       hoursSpan.innerHTML = `${hours}h${minutes}`
     }
   }
