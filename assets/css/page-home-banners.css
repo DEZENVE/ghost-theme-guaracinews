@@ -2,7 +2,7 @@
   margin-top: 40px;
 }
 
-#page-home-banner-1 .banner {
+#page-home-banner-1 .banner-internal {
   position: relative;
   overflow: hidden;
 
@@ -13,7 +13,7 @@
   border-radius: 0.25rem;
 }
 
-#page-home-banner-1 .background-photo {
+#page-home-banner-1 .banner-internal .background-photo {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,18 +26,18 @@
   filter: brightness(0.3);
 }
 
-#page-home-banner-1 .title {
+#page-home-banner-1 .banner-internal .title {
   position: relative;
   margin-bottom: 1rem;
 
   font-size: 3rem;
 }
 
-#page-home-banner-1 .description {
+#page-home-banner-1 .banner-internal .description {
   position: relative;
 }
 
-#page-home-banner-1 .button-link {
+#page-home-banner-1 .banner-internal .button-link {
   background-color: #ffffff;
 
   position: relative;
@@ -51,14 +51,44 @@
   border-radius: 0.5rem;
 }
 
+/* BANNER CLIENT */
+#page-home-banner-1 .banner-client .banner-image {
+  width: 100%;
+}
+
+#page-home-banner-1 .banner-client .banner-image.tablet,
+#page-home-banner-1 .banner-client .banner-image.mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  #page-home-banner-1 .banner-client .banner-image.desktop {
+    display: none;
+  }
+
+  #page-home-banner-1 .banner-client .banner-image.tablet {
+    display: block;
+  }
+}
+
 @media (max-width: 680px) {
-  #page-home-banner-1 .banner {
+  #page-home-banner-1 .banner-internal {
     padding: 4rem;
   }
 }
 
+@media (max-width: 500px) {
+  #page-home-banner-1 .banner-client .banner-image.tablet {
+    display: none;
+  }
+
+  #page-home-banner-1 .banner-client .banner-image.mobile {
+    display: block;
+  }
+}
+
 @media (max-width: 400px) {
-  #page-home-banner-1 .banner {
+  #page-home-banner-1 .banner-internal {
     padding: 3rem;
   }
 }
