@@ -49,6 +49,9 @@ function css(done) {
       src('assets/css/page-home-youtube-completed-live-events.css', {
         sourcemaps: true,
       }),
+      src('assets/css/page-home-youtube-upcoming-live-events.css', {
+        sourcemaps: true,
+      }),
       src('assets/css/page-contato.css', {sourcemaps: true}),
       postcss([easyimport, autoprefixer(), cssnano()]),
       dest('assets/built/', {sourcemaps: '.'}),
