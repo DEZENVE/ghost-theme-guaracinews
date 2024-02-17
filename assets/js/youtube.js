@@ -49,9 +49,20 @@ async function youtubeCompletedEvents() {
   }
 }
 
-async function youtubeUpcomingEvents() {
+async function youtubeUpcomingAndLiveEvents() {
   const getUpcomingEvents = async () => {
     const req = await fetch(`${HOST}/youtube/events/upcoming`)
+    const res = await req.json()
+
+    if ('items' in res) {
+      return res.items
+    } else {
+      return null
+    }
+  }
+
+  const getLiveEvents = async () => {
+    const req = await fetch(`${HOST}/youtube/events/live`)
     const res = await req.json()
 
     if ('items' in res) {
@@ -92,8 +103,9 @@ async function youtubeUpcomingEvents() {
   }
 
   const upcomingEvents = await getUpcomingEvents()
+  const liveEvents = await getLiveEvents()
 
-  if (upcomingEvents !== null) {
+  if (upcomingEvents !== null && liveEvents === null) {
     const {todayEvents, tomorrowEvents} = getEventsByDay(upcomingEvents)
 
     if (todayEvents.length > 0) {
@@ -164,7 +176,27 @@ async function youtubeUpcomingEvents() {
       hoursSpan.innerHTML = `${hours}h${minutes}`
     }
   }
+
+  if (liveEvents !== null) {
+    const section = document.getElementById(
+      'page-home-youtube-upcoming-live-events'
+    )
+    section.style.display = 'block'
+
+    const liveEventContainer = section.querySelector('.live-event-container')
+    liveEventContainer.style.display = 'block'
+
+    const youtubeIframe = liveEventContainer.querySelector('.youtube-iframe')
+    youtubeIframe.setAttribute(
+      'src',
+      `https://www.youtube.com/embed/${liveEvents[0].event.id.videoId}?si=cYXeueU___L71pjB&autoplay=1&mute=1`
+    )
+
+    const descriptionContainer =
+      liveEventContainer.querySelector('.description')
+    descriptionContainer.innerHTML = liveEvents[0].event.snippet.title
+  }
 }
 
 youtubeCompletedEvents()
-youtubeUpcomingEvents()
+youtubeUpcomingAndLiveEvents()
