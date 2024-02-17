@@ -112,15 +112,11 @@ async function youtubeUpcomingAndLiveEvents() {
       const hours = new Date(
         todayEvents[0].details.liveStreamingDetails.scheduledStartTime
       ).getHours()
-      const minutes =
-        new Date(
-          (
-            todayEvents[0].details.liveStreamingDetails.scheduledStartTime.getMinutes() <
-            10
-          ) ?
-            '0'
-          : ''
-        ) + date.getMinutes()
+
+      let minutes = new Date(
+        todayEvents[0].details.liveStreamingDetails.scheduledStartTime
+      ).getMinutes()
+      minutes < 10 ? (minutes = `0${minutes}`) : (minutes = minutes)
 
       const section = document.getElementById(
         'page-home-youtube-upcoming-live-events'
@@ -150,23 +146,21 @@ async function youtubeUpcomingAndLiveEvents() {
       const day = new Date(
         tomorrowEvents[0].details.liveStreamingDetails.scheduledStartTime
       ).getDate()
+
       const month = new Date(
         tomorrowEvents[0].details.liveStreamingDetails.scheduledStartTime
       )
         .toLocaleDateString('pt-BR', {month: 'short'})
         .replace('.', '')
+
       const hours = new Date(
         tomorrowEvents[0].details.liveStreamingDetails.scheduledStartTime
       ).getHours()
-      const minutes =
-        new Date(
-          (
-            tomorrowEvents[0].details.liveStreamingDetails.scheduledStartTime.getMinutes() <
-            10
-          ) ?
-            '0'
-          : ''
-        ) + date.getMinutes()
+
+      let minutes = new Date(
+        tomorrowEvents[0].details.liveStreamingDetails.scheduledStartTime
+      ).getMinutes()
+      minutes < 10 ? (minutes = `0${minutes}`) : (minutes = minutes)
 
       const section = document.getElementById(
         'page-home-youtube-upcoming-live-events'
