@@ -85,14 +85,14 @@ async function youtubeUpcomingAndLiveEvents() {
       const difference =
         (eventDate.getTime() - todayDate.getTime()) / (1000 * 60 * 60) // in hours
 
-      //const todayDay = todayDate.getDate()
-      //const eventDay = eventDate.getDate()
+      const todayDay = todayDate.getDate()
+      const eventDay = eventDate.getDate()
 
-      if (difference < 48 && todayDate < eventDate) {
+      if (difference < 48 && todayDate < eventDate && todayDay !== eventDay) {
         tomorrowEvents.push(event)
       }
 
-      if (difference < 24 && todayDate === eventDate) {
+      if (difference < 24 && todayDay === eventDay) {
         todayEvents.push(event)
       }
     }
